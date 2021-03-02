@@ -1,0 +1,27 @@
+.login-card {
+  background-color: #fff!important;
+  &-header {
+    background-color: #fff!important;
+    color: #000;
+  }
+  &-content {
+    background-color: #fff!important;
+    color: #000;
+  }
+}
+
+.success {
+  border: 1px solid green;
+}
+
+.warn {
+  border: 1px solid red;
+}
+
+.fingerprint {
+  font-size: 40px;
+  &-container {
+    width: 100%;
+    margin: auto;
+  }
+}

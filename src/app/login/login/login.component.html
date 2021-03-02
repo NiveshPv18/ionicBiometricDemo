@@ -1,0 +1,15 @@
+<ion-content>
+  <ion-card class="login-card">
+    <ion-card-header class="login-card-header">
+      Login
+    </ion-card-header>
+    <ion-card-content class="login-card-content">
+      <form>
+        <ion-input [placeholder]="'User Name'" (ionChange)="username = $event.detail.value"></ion-input>
+        <div class="fingerprint-container" (click)="checkFingerPrintAuth()">
+          <ion-icon class="fingerprint" name="finger-print"></ion-icon>
+        </div>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
