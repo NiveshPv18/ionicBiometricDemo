@@ -3,6 +3,9 @@
     <ion-title>
       Tab 1
     </ion-title>
+    <ion-button [slot]="'end'" (click)="logout()">
+      Logout
+    </ion-button>
   </ion-toolbar>
 </ion-header>
 
@@ -13,19 +16,19 @@
     </ion-toolbar>
   </ion-header>
 
-  Commands Used:
-  To create ionic project : ionic start AppName --capacitor
-  To include finger print dependencies :
-    1) npm install cordova-plugin-fingerprint-aio
-    2) npm install @ionic-native/fingerprint-aio
-  To get dependencies: npm install
-  To run the build : ionic build ; prod version : ionic build --prod
-  To add android : npx cap add android
-  To add ios : npx cap add ios
-  To open app in android studio : npx cap open android
-  To open app in XCode : npx cap open ios
+  <p>Commands Used:</p>
+  <p>To create ionic project : ionic start AppName --capacitor</p>
+  <p>To include finger print dependencies :</p>
+  <p>  1) npm install cordova-plugin-fingerprint-aio</p>
+  <p>  2) npm install @ionic-native/fingerprint-aio</p>
+  <p>To get dependencies: npm install</p>
+  <p>To run the build : ionic build ; prod version : ionic build --prod</p>
+  <p>To add android : npx cap add android</p>
+  <p>To add ios : npx cap add ios</p>
+  <p>To open app in android studio : npx cap open android</p>
+  <p>To open app in XCode : npx cap open ios</p>
 
-  In android studio:
-   After the gradle build is complete, open build > Build Bundles/ Apk(s) > Build Apk
+  <p>In android studio:</p>
+  <p>After the gradle build is complete, open build > Build Bundles/ Apk(s) > Build Apk</p>
 
 </ion-content>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {NavigationEnd, Router} from '@angular/router';
 import {FingerprintAIO} from '@ionic-native/fingerprint-aio/ngx';
+import {StorageService} from "../../services/storage.service";
 
 @Component({
   selector: 'app-login',
@@ -8,11 +9,16 @@ import {FingerprintAIO} from '@ionic-native/fingerprint-aio/ngx';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  public username = '';
-  constructor(private router: Router, private faio: FingerprintAIO) {
+  mobile: boolean;
+  constructor(private router: Router, private faio: FingerprintAIO, private storage: StorageService) {
     router.events.subscribe((val) => {
       if (val instanceof NavigationEnd) {
         // do operations on routing change
+        this.faio.isAvailable().then((result) => {
+          this.mobile = ['finger', 'biometric', 'face'].includes(result);
+        }).catch((error) => {
+          this.mobile = false;
+        })
       }
     });
   }
@@ -32,7 +38,7 @@ export class LoginComponent implements OnInit {
         })
             .then((res: any) => {
               if(res) {
-                this.router.navigateByUrl('tabs').then();
+                this.logIn()
               }
             })
             .catch((error: any) => {
@@ -42,6 +48,11 @@ export class LoginComponent implements OnInit {
         return false;
       }
     });
+  }
+
+  logIn() {
+    this.router.navigateByUrl('tabs').then();
+    this.storage.setItem('loggedIn', JSON.stringify(true));
   }
 
 }

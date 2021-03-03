@@ -5,8 +5,10 @@
     </ion-card-header>
     <ion-card-content class="login-card-content">
       <form>
-        <ion-input [placeholder]="'User Name'" (ionChange)="username = $event.detail.value"></ion-input>
-        <div class="fingerprint-container" (click)="checkFingerPrintAuth()">
+        <ion-button *ngIf="!mobile" (click)="logIn()">
+          Login
+        </ion-button>
+        <div *ngIf="mobile" class="fingerprint-container" (click)="checkFingerPrintAuth()">
           <ion-icon class="fingerprint" name="finger-print"></ion-icon>
         </div>
       </form>

@@ -5,6 +5,7 @@ import {IonicModule} from '@ionic/angular';
 import {LoginRoutingModule} from './login/login-routing.module';
 import {TabsPageModule} from '../tabs/tabs.module';
 import {FingerprintAIO} from '@ionic-native/fingerprint-aio/ngx';
+import {StorageService} from "../services/storage.service";
 
 
 @NgModule({
@@ -15,6 +16,6 @@ import {FingerprintAIO} from '@ionic-native/fingerprint-aio/ngx';
     TabsPageModule,
     LoginRoutingModule
   ],
-  providers: [FingerprintAIO]
+  providers: [FingerprintAIO, StorageService]
 })
 export class LoginModule { }

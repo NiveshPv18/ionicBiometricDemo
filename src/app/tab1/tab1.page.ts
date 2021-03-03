@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {Router} from "@angular/router";
+import {StorageService} from "../services/storage.service";
 
 @Component({
   selector: 'app-tab1',
@@ -7,6 +9,10 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  constructor() {}
+  constructor(private router: Router, private storage: StorageService) {}
 
+  logout() {
+    this.storage.removeItem('loggedIn');
+    this.router.navigateByUrl('login')
+  }
 }

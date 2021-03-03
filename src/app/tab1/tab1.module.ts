@@ -5,6 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { Tab1Page } from './tab1.page';
 
 import { Tab1PageRoutingModule } from './tab1-routing.module';
+import {FingerprintAIO} from "@ionic-native/fingerprint-aio/ngx";
+import {StorageService} from "../services/storage.service";
 
 @NgModule({
   imports: [
@@ -13,6 +15,7 @@ import { Tab1PageRoutingModule } from './tab1-routing.module';
     FormsModule,
     Tab1PageRoutingModule
   ],
-  declarations: [Tab1Page]
+  declarations: [Tab1Page],
+  providers: [StorageService]
 })
 export class Tab1PageModule {}
